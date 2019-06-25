@@ -1,4 +1,4 @@
-package com.wisely.domain;
+package com.wisely.ch8_2.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
