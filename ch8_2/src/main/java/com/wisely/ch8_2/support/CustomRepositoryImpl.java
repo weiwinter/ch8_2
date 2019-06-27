@@ -6,8 +6,8 @@ import javax.persistence.EntityManager;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.support.JpaMetamodelEntityInformation;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
-import org.springframework.stereotype.Service;
 
 import static com.wisely.ch8_2.specs.CustomerSpecs.*;
 
@@ -18,6 +18,11 @@ extends SimpleJpaRepository<T, ID> implements CustomRepository<T, ID> {
 
 	public CustomRepositoryImpl(Class<T> domainClass, EntityManager em) {
 		super(domainClass, em);
+		this.entityManager = em;
+	}
+	
+	public CustomRepositoryImpl(JpaMetamodelEntityInformation information, EntityManager em) {
+		super(information,em);
 		this.entityManager = em;
 	}
 

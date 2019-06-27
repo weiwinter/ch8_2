@@ -18,7 +18,8 @@ public class DataController {
 
 	
 	
-	@Autowired PersonRepository personRepository;
+	@Autowired 
+	PersonRepository personRepository;
 	  
 	@RequestMapping("/hello") public String hello() { return "Hello World!!"; }
 	 
